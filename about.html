@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dhruva institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .founder-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .review-card:hover {
+            border-color: #0ea5e9;
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0ea5e9;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100 text-slate-900 font-['Inter']">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm" <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-3">
+                <div class="w-40 h-40 rounded-2xl flex items-center justify-center">
+                    <img src="./images/logo.png" alt="">
+                </div>
+                <span class="text-xs font-medium bg-sky-100 text-sky-600 px-3 py-1 rounded-3xl">Prayagraj</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-sky-600">Home</a>
+                <a href="services.html" class="nav-link text-gray-700 hover:text-sky-600">Services</a>
+                <a href="courses.html" class="nav-link text-gray-700 hover:text-sky-600">Courses</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-sky-600">About</a>
+                <a href="contact.html" class="nav-link text-gray-700 hover:text-sky-600">Contact</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+918356957993"
+                    class="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-sky-600">
+                    <i class="fa-solid fa-phone"></i> +91 8356957993
+                </a>
+                <button
+                    class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-2.5 rounded-3xl text-sm font-semibold flex items-center gap-2">
+                    <a href="https://wa.me/918356957993"> <i class="fa-solid fa-rocket"></i> Enroll Now
+                </button></a>
+            </div>
+
+            <button onclick="toggleMobileMenu()"
+                class="md:hidden w-11 h-11 flex items-center justify-center text-2xl text-gray-700">
+                <i id="hamburger" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 py-6 mobile-menu">
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Home</a>
+                <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Services</a>
+                <a href="courses.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Courses</a>
+                <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">About</a>
+                <a href="contact.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Contact</a>
+
+                <button onclick="toggleMobileMenu(); openEnrollForm()"
+                    class="w-full bg-sky-500 text-white py-4 rounded-3xl font-semibold mt-4">
+                    Enroll Today
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <section class="py-20 founder-gradient text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center bg-blue-100">
+            <div class="relative z-10">
+                <span class="text-sky-400 font-bold tracking-widest uppercase text-sm">Our Visionary</span>
+                <h1 class="text-5xl md:text-6xl font-bold logo-font mt-4 mb-6 leading-tight">
+                    Founded on the <span class="text-sky-400">Promise of Excellence.</span>
+                </h1>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    "Education is not just about grades; it's about building the confidence to lead. At Apex, we treat every student as a future leader of Prayagraj."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-0.5 bg-sky-500"></div>
+                    <span class="text-xl font-semibold tracking-wide">Manas Singh, <span class="text-slate-400 font-normal">Founder & Director</span></span>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-square bg-sky-500/20 rounded-[3rem] overflow-hidden border border-white/10 relative">
+                    <div class="absolute inset-0 flex items-center justify-center text-sky-500/30 text-9xl">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
+                    </div>
+                    </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl text-slate-900 hidden md:block">
+                    <p class="text-3xl font-bold">12+</p>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-tighter">Years of Legacy</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="bg-[#eff6ff] font-['Inter'] py-12 md:py-20 p-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- LEFT: Founder data -->
+            <div class="order-2 md:order-1">
+                <div
+                    class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    Prayagraj's trusted coaching
+                </div>
+
+                <h1 class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                    Learn better,<br><span class="text-sky-500">score higher</span> —<br>with the right teacher
+                </h1>
+
+                <p class="text-slate-500 text-base md:text-lg leading-relaxed mb-8">
+                    Personalized coaching for Class 10–12, CUET & JEECUP. Small batches, flexible timings, right here in
+                    Prayagraj.
+                </p>
+
+                <!-- Founder row -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center font-['Space_Grotesk'] text-xl font-bold text-sky-600 flex-shrink-0">
+                        MS</div>
+                    <div>
+                        <div class="font-bold text-slate-900">Manas Singh</div>
+                        <div class="text-xs text-slate-400 mt-1">Founder & Director · 12+ years experience</div>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <div class="border-l-4 border-sky-200 pl-4 mb-8">
+                    <p class="text-slate-500 italic text-sm md:text-base leading-relaxed">
+                        "Education is not just about grades — it's about building confidence to lead."
+                    </p>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-8">
+                    <div>
+                        <div class="font-['Space_Grotesk'] text-2xl font-bold text-slate-900">5000+</div>
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Students taught</div>
+                    </div>
+                    <div class="hidden sm:block w-px bg-slate-200 h-10"></div>
+                    <div>
+                        <div class="font-['Space_Grotesk'] text-2xl font-bold text-slate-900">94%</div>
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Success rate</div>
+                    </div>
+                    <div class="hidden sm:block w-px bg-slate-200 h-10"></div>
+                    <div>
+                        <div class="font-['Space_Grotesk'] text-2xl font-bold text-slate-900">4.9★</div>
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Student rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Image -->
+            <div class="relative order-1 md:order-2 mb-8 md:mb-0">
+                <div class="w-full aspect-[4/5] rounded-[2rem] overflow-hidden bg-sky-200 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+                        alt="Manas Singh, Founder" class="w-full h-full object-cover">
+                </div>
+                <!-- Badge bottom left -->
+                <div
+                    class="absolute -bottom-6 -left-4 md:-left-8 bg-white border border-sky-100 rounded-2xl p-4 md:p-6 shadow-xl">
+                    <div class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-sky-500">12+</div>
+                    <div class="text-[10px] md:text-xs text-slate-400 font-bold uppercase tracking-wider">Years of
+                        legacy</div>
+                </div>
+                <!-- Badge top right -->
+                <div
+                    class="absolute top-6 -right-4 md:-right-8 bg-white border border-sky-100 rounded-2xl p-4 shadow-xl hidden sm:block">
+                    <div class="text-amber-400 text-sm mb-1">★★★★★</div>
+                    <div class="text-[10px] text-slate-500 font-medium">500+ students this year</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="py-17 bg-blue-100">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Heading -->
+            <!-- FACULTY SECTION -->
+            <section class="section-padding bg-blue-100">
+                <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold tracking-tight m-4">Meet Our Expert Faculty</h2>
+                        <p class="text-slate-600 max-w-2xl mx-auto">
+                            Highly qualified educators from top institutions dedicated to your success
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Faculty Card 1 -->
+                        <div class="text-center group">
+                            <div class="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden mb-6 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <h4 class="font-bold text-xl mb-1">Dr. Priya Sharma</h4>
+                            <p class="text-sky-600 mb-6">HOD Physics • CUET Expert</p>
+                            <a href="https://wa.me/918356957993" target="_blank" rel="noopener noreferrer"
+                                class="border border-sky-500 text-sky-600 px-8 py-3 rounded-full hover:bg-sky-500 hover:text-white transition-all text-sm font-medium inline-flex items-center justify-center">
+                                Book a Demo
+                            </a>
+                        </div>
+
+                        <!-- Faculty Card 2 -->
+                        <div class="text-center group">
+                            <div class="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden mb-6 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <h4 class="font-bold text-xl mb-1">Rahul Verma</h4>
+                            <p class="text-sky-600 mb-6">Mathematics Specialist</p>
+                            <a href="https://wa.me/918356957993" target="_blank" rel="noopener noreferrer"
+                                class="border border-sky-500 text-sky-600 px-8 py-3 rounded-full hover:bg-sky-500 hover:text-white transition-all text-sm font-medium inline-flex items-center justify-center">
+                                Book a Demo
+                            </a>
+                        </div>
+
+                        <!-- Faculty Card 3 -->
+                        <div class="text-center group">
+                            <div class="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden mb-6 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <h4 class="font-bold text-xl mb-1">Neha Singh</h4>
+                            <p class="text-sky-600 mb-6">JEECUP Expert</p>
+                            <a href="https://wa.me/918356957993" target="_blank" rel="noopener noreferrer"
+                                class="border border-sky-500 text-sky-600 px-8 py-3 rounded-full hover:bg-sky-500 hover:text-white transition-all text-sm font-medium inline-flex items-center justify-center">
+                                Book a Demo
+                            </a>
+                        </div>
+
+                        <!-- Faculty Card 4 -->
+                        <div class="text-center group">
+                            <div class="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden mb-6 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <h4 class="font-bold text-xl mb-1">Amit Khanna</h4>
+                            <p class="text-sky-600 mb-6">Senior Chemistry Faculty</p>
+                            <a href="https://wa.me/918356957993" target="_blank" rel="noopener noreferrer"
+                                class="border border-sky-500 text-sky-600 px-8 py-3 rounded-full hover:bg-sky-500 hover:text-white transition-all text-sm font-medium inline-flex items-center justify-center">
+                                Book a Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-10 bg-blue-100 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6">
+
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                        <div>
+                            <h2 class="text-4xl font-bold text-slate-900 tracking-tight mb-2">Voice of Our Students</h2>
+                            <p class="text-slate-500">Real feedback from students across Prayagraj.</p>
+                        </div>
+
+                        <div class="flex gap-3 mb-2">
+                            <button onclick="scrollReview('left')"
+                                class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-sky-500 hover:shadow-md transition-all">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button onclick="scrollReview('right')"
+                                class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-sky-500 hover:shadow-md transition-all">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="reviewSlider" class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8">
+
+                        <div
+                            class="min-w-[320px] min-h-[320px] snap-center bg-white p-10 rounded-[2rem] border-2 shadow-sm flex flex-col justify-between">
+                            <div class="flex text-amber-400 gap-1 mb-6">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic leading-relaxed mb-10 text-lg">
+                                "The personalized attention I received for my Class 12 Boards was life-changing. I went
+                                from 70% in mocks to 94% in final exams. Best home tuition in Prayagraj!"
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 bg-sky-100 rounded-full flex items-center justify-center text-sky-600 font-bold text-xl">
+                                    AS</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-lg">Ananya Singh</h5>
+                                    <p class="text-sm text-slate-400 font-medium">Class 12, CBSE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="min-w-[320px] min-h-[320px] snap-center bg-white p-10 rounded-[2rem] border-2 shadow-sm flex flex-col justify-between">
+                            <div class="flex text-amber-400 gap-1 mb-6">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic leading-relaxed mb-10 text-lg">
+                                "The JEECUP preparation modules are exceptionally well-designed. The focus on technical
+                                concepts and previous year question papers helped me secure a top rank for the
+                                Polytechnic entrance."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl">
+                                    RY</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-lg">Rohan Yadav</h5>
+                                    <p class="text-sm text-slate-400 font-medium">JEECUP Aspirant</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="min-w-[320px] min-h-[320px] snap-center bg-white p-10 rounded-[2rem] border-2 shadow-sm flex flex-col justify-between">
+                            <div class="flex text-amber-400 gap-1 mb-6">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic leading-relaxed mb-10 text-lg">
+                                "Highly recommended for students struggling with Science. The practical approach at the
+                                center makes learning very easy and fun."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold text-xl">
+                                    MK</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-lg">Mohd. Khalid</h5>
+                                    <p class="text-sm text-slate-400 font-medium">Class 10, ICSE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="min-w-[320px] min-h-[320px] snap-center bg-white p-10 rounded-[2rem] border-2 shadow-sm flex flex-col justify-between">
+                            <div class="flex text-amber-400 gap-1 mb-6">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic leading-relaxed mb-10 text-lg">
+                                "The CUET preparation modules are exceptionally well-designed. The mock tests for the
+                                General Test and Domain subjects helped me significantly improve my speed and accuracy
+                                for the final exam."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold text-xl">
+                                    PS</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-lg">Priya Sharma</h5>
+                                    <p class="text-sm text-slate-400 font-medium">CUET Aspirant</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+
+                /* Hide scrollbar for IE, Edge and Firefox */
+                .scrollbar-hide {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            </style>
+
+            <script>
+                function scrollReview(direction) {
+                    const slider = document.getElementById('reviewSlider');
+                    // Calculate the width of one card + gap
+                    const scrollAmount = slider.offsetWidth / (window.innerWidth < 768 ? 1 : 3);
+
+                    if (direction === 'left') {
+                        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    } else {
+                        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                }
+            </script>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5 p-5">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl mb-2"><i class="fa-solid fa-user-group"></i></div>
+                    <h6 class="font-bold text-slate-900">1 Teacher : 1 Student</h6>
+                    <p class="text-xs text-slate-400 mt-1">Dedicated teacher just for you</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl mb-2"><i class="fa-solid fa-clock"></i></div>
+                    <h6 class="font-bold text-slate-900">Flexible Timing</h6>
+                    <p class="text-xs text-slate-400 mt-1">Study when it suits you best</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl mb-2"><i class="fa-solid fa-bullseye"></i></div>
+                    <h6 class="font-bold text-slate-900">Custom Learning Plan</h6>
+                    <p class="text-xs text-slate-400 mt-1">Tailored to your specific needs</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl mb-2"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h6 class="font-bold text-slate-900">Verified Teachers</h6>
+                    <p class="text-xs text-slate-400 mt-1">Top 1% educators with proven results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                <div class="md:pl-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-40 h-20 rounded-2xl flex items-center justify-center text-9xl">
+                            <img src="./images/footer-logo(1)(1)(1).png" alt="">
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Your trusted education partner in Prayagraj since 2018. Providing quality offline tuition, home
+                        tuition and competitive exam preparation.
+                    </p>
+                </div>
+
+                <div>
+                    <h6 class="font-semibold mb-5 text-lg">Popular Courses</h6>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>JEECUP Polytechnic Preparation</li>
+                        <li>Academic & Career Path</li>
+                        <li>Class 10 Board Exam</li>
+                        <li>Class 12 PCM/PCB</li>
+                        <li>Home Tuition</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h6 class="font-semibold mb-5 text-lg">Quick Links</h6>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#courses" class="hover:text-white transition-colors">Our Courses</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-6 text-lg">Office Hours</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex justify-between"><span>Mon - Fri:</span> <span>09:00 - 20:00</span></li>
+                        <li class="flex justify-between"><span>Saturday:</span> <span>10:00 - 18:00</span></li>
+                        <li class="flex justify-between border-t border-slate-800 pt-4 text-sky-400 font-semibold">
+                            <span>Emergency:</span> <span>24/7 Available</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-sm text-gray-500">
+                © 2026 Dhruva institute. All Rights Reserved. | Made with ❤️ for Prayagraj Students
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburger');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        }
+    </script>
+</body>
+
+</html>

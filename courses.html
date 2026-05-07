@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees & Subjects - Dhruva institute Prayagraj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+        
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .tab { transition: all 0.3s ease; }
+        .tab-active { border-bottom: 4px solid #0ea5e9; color: #0ea5e9; font-weight: 600; }
+        
+        .hero-bg {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
+                      url('./images/Gemini_Generated_Image_4x1xuf4x1xuf4x1x.png');
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+        
+        .modal {
+            animation: modalPop 0.3s ease forwards;
+        }
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+         .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0ea5e9;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+         @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-blue-100 font-sans">
+
+<!-- Navbar -->
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm"
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-40 h-40 rounded-2xl flex items-center justify-center">
+                        <img src="./images/logo.png" alt="">
+                    </div>
+                    <span class="text-xs font-medium bg-sky-100 text-sky-600 px-3 py-1 rounded-3xl">Prayagraj</span>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-sky-600">Home</a>
+                    <a href="services.html" class="nav-link text-gray-700 hover:text-sky-600">Services</a>
+                    <a href="courses.html" class="nav-link text-gray-700 hover:text-sky-600">Courses</a>
+                    <a href="about.html" class="nav-link text-gray-700 hover:text-sky-600">About</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-sky-600">Contact</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:+918356957993" class="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-sky-600">
+                        <i class="fa-solid fa-phone"></i> +91 8356957993
+                    </a>
+                    <button
+                            class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-2.5 rounded-3xl text-sm font-semibold flex items-center gap-2">
+                      <a href="https://wa.me/918356957993">  <i class="fa-solid fa-rocket"></i> Enroll Now 
+                    </button></a>
+                </div>
+
+                <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center text-2xl text-gray-700">
+                    <i id="hamburger" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 py-6 mobile-menu">
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Home</a>
+                <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Services</a>
+                <a href="courses.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Courses</a>
+                <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">About</a>
+                <a href="contact.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">Contact</a>
+                
+                <button onclick="toggleMobileMenu(); openEnrollForm()" 
+                        class="w-full bg-sky-500 text-white py-4 rounded-3xl font-semibold mt-4">
+                    Enroll Today
+                </button>
+            </div>
+        </div>
+    </nav>
+<!-- HERO SECTION WITH BACKGROUND IMAGE -->
+
+
+<!-- HERO SECTION WITH VIDEO BACKGROUND -->
+<section class="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline 
+           class="absolute w-full h-full object-cover">
+        <source src="./images/Offline_Home_Tuition_Video_Creation.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl text-center px-6">
+        
+        <h2 class="text-5xl md:text-6xl font-semibold logo-font tracking-tighter">
+            OUR COURSES
+        </h2>
+
+        <p class="mt-6 text-xl text-sky-100">
+            Clear & Affordable pricing for Offline Tuition and Home Tuition in Prayagraj
+        </p>
+
+    </div>
+
+</section>
+<div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-semibold logo-font tracking-tighter">Fees & Subjects 2026-27</h1>
+        <p class="text-gray-600 mt-3">Offline Tuition & Home Tuition in Prayagraj</p>
+    </div>
+
+    <!-- Tabs -->
+  <div class="max-w-4xl mx-auto mb-12">
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button onclick="setTuitionType('offline')" id="btn-offline" 
+                class="type-btn px-8 py-3 rounded-2xl border-2 border-sky-500 bg-sky-500 text-white font-semibold transition-all">
+            <i class="fa-solid fa-building-columns mr-2"></i> Offline Center
+        </button>
+        <button onclick="setTuitionType('home')" id="btn-home" 
+                class="type-btn px-8 py-3 rounded-2xl border-2 border-sky-200 text-gray-600 font-semibold hover:border-sky-500 transition-all">
+            <i class="fa-solid fa-house-chimney mr-2"></i> Home Tuition
+        </button>
+    </div>
+
+    <div class="flex justify-center items-center gap-2 bg-white p-2 rounded-3xl shadow-sm border border-gray-100 max-w-md mx-auto">
+        <button onclick="setBoard('CBSE')" id="board-CBSE" class="board-tab flex-1 py-2 rounded-2xl text-sm font-bold bg-sky-100 text-sky-600">CBSE</button>
+        <button onclick="setBoard('ICSE')" id="board-ICSE" class="board-tab flex-1 py-2 rounded-2xl text-sm font-bold text-gray-500 hover:bg-gray-50">ICSE/ISC</button>
+        <button onclick="setBoard('UPBoard')" id="board-UPBoard" class="board-tab flex-1 py-2 rounded-2xl text-sm font-bold text-gray-500 hover:bg-gray-50">UP BOARD</button>
+    </div>
+</div>
+
+    <!-- Tab Content -->
+    <div id="tabContent" class="min-h-[400px]"></div>
+
+    <!-- Teachers Profiles -->
+    <div class="mt-20">
+        <h2 class="text-3xl font-semibold text-center mb-10">Our Expert Teachers</h2>
+        <div id="teachersGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+</div>
+
+<!-- Teacher Modal -->
+<div id="teacherModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 ">
+    <div class="relatived modal bg-white rounded-3xl max-w-lg w-full mx-4 overflow-hidden">
+        <div class="p-8" id="modalContent">
+            <!-- Filled by JS -->
+        </div>
+        <div class="absolute -top-3 -right-3 bg-amber-500 text-white text-xs font-bold px-6 py-1 rounded-3xl">Most Popular</div>
+        <div class="border-t p-4 flex justify-end gap-3">
+            <button onclick="closeModal()" 
+                    class="px-8 py-3 bg-gray-100 hover:bg-gray-200 rounded-3xl font-medium">
+                Close
+            </button>
+            <button onclick="bookDemoFromModal()" 
+                    class="px-8 py-3 bg-sky-600 text-white rounded-3xl font-medium flex items-center gap-2">
+                <i class="fa-solid fa-handshake"></i> Book Demo Class
+            </button>
+        </div>
+    </div>
+</div>
+
+              <!-- FOOTER -->
+ <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            
+            <div class="md:pl-8"> 
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-40 h-20 rounded-2xl flex items-center justify-center text-9xl">
+                        <img src="./images/footer-logo(1)(1)(1).png" alt="">
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Your trusted education partner in Prayagraj since 2018. Providing quality offline tuition, home tuition and competitive exam preparation.
+                </p>
+            </div>
+
+            <div>
+                <h6 class="font-semibold mb-5 text-lg">Popular Courses</h6>
+                <ul class="space-y-3 text-gray-400">
+                    <li>JEECUP Polytechnic Preparation</li>
+                    <li>Academic & Career Path</li>
+                    <li>Class 10 Board Exam</li>
+                    <li>Class 12 PCM/PCB</li>
+                    <li>Home Tuition</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h6 class="font-semibold mb-5 text-lg">Quick Links</h6>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#courses" class="hover:text-white transition-colors">Our Courses</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h6 class="font-semibold mb-5 text-lg">Contact Us</h6>
+                <p class="text-gray-400 leading-relaxed">Sirsa Meja<br>Prayagraj, Uttar Pradesh</p>
+                <p class="mt-4 flex items-center gap-2 text-gray-400">
+                    <i class="fa-solid fa-phone text-sky-500"></i> +91 8356957993
+                </p>
+                <p class="mt-2 text-gray-400">info@dhruvaistitute.in</p>
+                
+                <div class="flex gap-5 mt-8 text-2xl">
+                   <a href="https://wa.me/918356957993"><i class="fa-brands fa-whatsapp hover:text-emerald-400 cursor-pointer transition-transform hover:scale-110"></i></a>
+                    <a href="https://wa.me/918356957993"><i class="fa-brands fa-instagram hover:text-pink-400 cursor-pointer transition-transform hover:scale-110"></i></a>
+                    <a href="https://wa.me/918356957993"><i class="fa-brands fa-youtube hover:text-red-500 cursor-pointer transition-transform hover:scale-110"></i></a>  
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="border-t border-gray-800 mt-16 pt-8 text-center text-sm text-gray-500">
+            © 2026 Dhruva institute. All Rights Reserved. | Made with ❤️ for Prayagraj Students
+        </div>
+    </div>
+</footer>
+<script>
+// Mock API Data
+const apiData = {
+    offline: {
+        title: "Offline Tuition at Prayagraj center",
+        description: "Small batches (8-12 students) • Air-conditioned classrooms",
+        boards: {
+            CBSE: [
+                { className: "Class 6–8", subjects: "All Subjects", fee: "₹2,800 / month" },
+                { className: "Class 9–10", subjects: "Maths + Science + English", fee: "₹3,500 / month" },
+                { className: "Class 11–12", subjects: "Physics, Chem, Maths/Bio", fee: "₹4,800 / month" }
+            ],
+            ICSE: [
+                { className: "Class 6–8", subjects: "All Subjects", fee: "₹3,000 / month" },
+                { className: "Class 9–10", subjects: "Science & Maths (Selina/Frank)", fee: "₹3,800 / month" },
+                { className: "Class 11–12 (ISC)", subjects: "PCM/PCB (Nootan/S.Chand)", fee: "₹5,200 / month" }
+            ],
+            UPBoard: [
+                { className: "Class 9–10", subjects: "Maths + Science (NCERT)", fee: "₹2,000 / month" },
+                { className: "Class 11–12", subjects: "PCM/PCB", fee: "₹3,000 / month" }
+            ]
+        }
+    },
+    home: {
+        title: "Home Tuition (Anywhere in Prayagraj)",
+        description: "Personalized 1-on-1 tutoring at your residence",
+        boards: {
+            CBSE: [
+                { className: "Class 6–10", subjects: "1-on-1", fee: "₹6,000 – ₹8,000" },
+                { className: "Class 11–12", subjects: "Per Subject", fee: "₹4,500 / month" }
+            ],
+            ICSE: [
+                { className: "Class 6–10", subjects: "1-on-1", fee: "₹7,000 – ₹9,000" },
+                { className: "Class 11–12 (ISC)", subjects: "Per Subject", fee: "₹5,500 / month" }
+            ],
+            UPBoard: [
+                { className: "Class 9–12", subjects: "1-on-1 (Hindi/English Medium)", fee: "₹4,000 – ₹6,000" }
+            ]
+        }
+    }
+};
+
+// State management
+let currentTuitionType = 'offline';
+let currentBoard = 'CBSE';
+
+const teachers = [
+    {
+        name: "Dr. Priya Sharma",
+        subject: "Physics & JEECUP Expert",
+        exp: "14+ years",
+        qual: "Ex-IIT Kanpur, PhD",
+        about: "Former faculty at Allen & Resonance. Produced multiple 2-digit JEECUP ranks.",
+        rate: "Highly Experienced"
+    },
+    {
+        name: "Rahul Verma",
+        subject: "Mathematics",
+        exp: "11+ years",
+        qual: "IIT Delhi",
+        about: "Specialist in JEE Advanced Mathematics with shortcut techniques.",
+        rate: "Popular Choice"
+    },
+    {
+        name: "Neha Singh",
+        subject: "Chemistry & Physics",
+        exp: "9+ years",
+        qual: "M.Sc. Organic Chemistry",
+        about: "Expert in CUET Chemistry. Students consistently score 160+.",
+        rate: "Student Favorite"
+    }
+];
+
+// Render Tab Content
+function setTuitionType(type) {
+    currentTuitionType = type;
+    
+    // Update Buttons UI
+    document.querySelectorAll('.type-btn').forEach(btn => {
+        btn.classList.remove('bg-sky-500', 'text-white', 'border-sky-500');
+        btn.classList.add('border-sky-200', 'text-gray-600');
+    });
+    
+    const activeBtn = document.getElementById(`btn-${type}`);
+    activeBtn.classList.add('bg-sky-500', 'text-white', 'border-sky-500');
+    activeBtn.classList.remove('border-sky-200', 'text-gray-600');
+    
+    renderContent();
+}
+
+function setBoard(board) {
+    currentBoard = board;
+    
+    // Update Tabs UI
+    document.querySelectorAll('.board-tab').forEach(tab => {
+        tab.classList.remove('bg-sky-100', 'text-sky-600');
+        tab.classList.add('text-gray-500');
+    });
+    
+    const activeTab = document.getElementById(`board-${board}`);
+    activeTab.classList.add('bg-sky-100', 'text-sky-600');
+    activeTab.classList.remove('text-gray-500');
+    
+    renderContent();
+}
+
+function renderContent() {
+    const data = apiData[currentTuitionType];
+    const boardData = data.boards[currentBoard];
+    
+    let html = `
+        <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 border border-sky-50 animate-slideDown">
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <h2 class="text-3xl font-semibold mb-2">${data.title}</h2>
+                    <p class="text-gray-600">${data.description} • <span class="text-sky-600 font-bold">${currentBoard} Syllabus</span></p>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="text-left p-5 font-semibold text-gray-900">Class</th>
+                            <th class="text-left p-5 font-semibold text-gray-900">Coverage</th>
+                            <th class="text-right p-5 font-semibold text-gray-900">Est. Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    `;
+
+    boardData.forEach(item => {
+        html += `
+            <tr class="border-b border-gray-50 hover:bg-sky-50/50 transition-colors">
+                <td class="p-5 font-bold text-gray-800">${item.className}</td>
+                <td class="p-5 text-gray-600">${item.subjects}</td>
+                <td class="p-5 text-right font-bold text-emerald-600">${item.fee}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-10 flex flex-col md:flex-row items-center justify-between gap-6 bg-sky-50 p-6 rounded-2xl">
+                <p class="text-sm text-sky-800 italic font-medium">Note: Special discounts available for sibling enrollments.</p>
+                <button onclick="enquireNow()" 
+                        class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-3 transition-transform active:scale-95">
+                    <i class="fa-solid fa-whatsapp text-xl"></i> Get Detailed Quote
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('tabContent').innerHTML = html;
+}
+
+// Update the Init function
+window.onload = () => {
+    renderContent(); 
+    renderTeachers();
+};
+    const data = type === 0 ? apiData.offline : apiData.home;
+    
+    let html = `
+        <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12">
+            <h2 class="text-3xl font-semibold mb-2">${data.title}</h2>
+            <p class="text-gray-600 mb-8">${data.description}</p>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="text-left p-5 font-semibold">Class</th>
+                            <th class="text-left p-5 font-semibold">Subjects</th>
+                            <th class="text-right p-5 font-semibold">Monthly Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    `;
+
+    data.fees.forEach(item => {
+        html += `
+            <tr class="border-b hover:bg-sky-50">
+                <td class="p-5 font-medium">${item.className}</td>
+                <td class="p-5 text-gray-600">${item.subjects}</td>
+                <td class="p-5 text-right font-semibold text-emerald-600">${item.fee}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-bold font-weight: 900 text-black mt-6 italic">${data.note}</p>
+            
+            <div class="mt-10 text-center">
+                <button onclick="enquireNow()" 
+                        class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-2.5 rounded-3xl text-sm text-lg font-semibold inline-flex items-center gap-3">
+                    <i class="fa-solid fa-whatsapp"></i> Enquire on WhatsApp
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('tabContent').innerHTML = html;
+
+
+function switchTab(n) {
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('tab-active'));
+    document.getElementById('tab' + n).classList.add('tab-active');
+    renderTabContent(n);
+}
+
+// Teachers Grid
+function renderTeachers() {
+    let html = '';
+    teachers.forEach((teacher, index) => {
+        html += `
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="showTeacherProfile(${index})">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-semibold">${teacher.name}</h3>
+                        <p class="text-sky-600">${teacher.subject}</p>
+                    </div>
+                    <span class="text-xs bg-emerald-100 text-emerald-700 px-4 py-2 rounded-3xl">${teacher.rate}</span>
+                </div>
+                
+                <div class="mt-6 text-sm text-gray-600">
+                    <p><strong>Experience:</strong> ${teacher.exp}</p>
+                    <p><strong>Qualification:</strong> ${teacher.qual}</p>
+                </div>
+                
+                <button class="mt-8 w-full border border-sky-300 hover:bg-sky-50 text-sky-600px-6 py-2.5 rounded-3xl text-sm font-medium">
+                    Book Demo Class
+                </button>
+            </div>
+        `;
+    });
+    document.getElementById('teachersGrid').innerHTML = html;
+}
+
+function showTeacherProfile(index) {
+    const t = teachers[index];
+    const modalHTML = `
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-indigo-500 rounded-3xl flex items-center justify-center text-5xl text-white">
+                👨‍🏫
+            </div>
+            <div>
+                <h3 class="text-3xl font-semibold">${t.name}</h3>
+                <p class="text-sky-600">${t.subject}</p>
+            </div>
+        </div>
+        <div class="space-y-4 text-gray-700">
+            <p><strong>Experience:</strong> ${t.exp}</p>
+            <p><strong>Qualification:</strong> ${t.qual}</p>
+            <p class="leading-relaxed">${t.about}</p>
+        </div>
+        <div class="mt-8 bg-amber-50 border border-amber-200 p-6 rounded-2xl">
+            <p class="text-amber-700 font-medium">Book a free demo class with ${t.name.split(' ')[0]}</p>
+        </div>
+    `;
+    
+    document.getElementById('modalContent').innerHTML = modalHTML;
+    document.getElementById('teacherModal').classList.remove('hidden');
+}
+
+function closeModal() {
+    document.getElementById('teacherModal').classList.add('hidden');
+}
+
+function bookDemoFromModal() {
+    closeModal();
+    setTimeout(() => {
+        alert("✅ Demo class booking request sent!\nOur team will contact you shortly.");
+    }, 400);
+}
+function enquireNow() {
+    window.location.href = "https://wa.me/918356957993";
+}
+// Initialize
+window.onload = () => {
+    switchTab(0);   // Default: Offline Tuition
+    renderTeachers();
+};
+        // Mobile Menu Toggle
+    function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburger');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        }
+
+</script>
+
+</body>
+</html>
